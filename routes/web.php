@@ -22,3 +22,7 @@ $router->post('/register', 'AuthController@actionRegister');
 
 $router->get('/logout', 'AuthController@actionLogout');
 $router->post('/logout', 'AuthController@actionLogout');
+
+
+$router->get('/upload', 'FileController@actionUpload');
+$router->post('/upload', 'FileController@actionUpload');
