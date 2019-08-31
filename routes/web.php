@@ -18,7 +18,7 @@ $router->post('/login', 'AuthController@actionLogin');
 $router->post('/logout', 'AuthController@actionLogout');
 
 
-$router->post('/upload', 'FileController@actionUpload');
+//$router->post('/upload', 'FileController@actionUpload');
 
 $router->get('/siteinfo', 'SiteController@info');
 
