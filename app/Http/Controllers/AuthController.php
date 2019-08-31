@@ -2,8 +2,6 @@
 /**
  * Auth Controller
  * @author lixworth <lixworth@163.com>
- * @copyright LeeTask Dev Group.
- * @link https://leetask.cn
  */
 
 namespace App\Http\Controllers;
@@ -26,17 +24,36 @@ class AuthController extends Controller
 
     public function actionLogin(Request $request)
     {
+        if(! User::where('id',1)->first()){
+            $user = new User();
+            $user->name = "admin";
+            $user->password = Hash::make("admin");
+            $user->save();
+        }
         if (!$token = $this->jwt->attempt($request->only('name', 'password'))) {
             return [
-                'error' => 40101
+                'error' => 4012
             ];
         }
 
         return [
             'error' => 0,
-            'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => $this->jwt->factory()->getTTL() * 60
+            'data' => [
+                'access_token' => $token,
+                'token_type' => 'bearer',
+                'expires_in' => $this->jwt->factory()->getTTL() * 60
+            ]
+        ];
+    }
+
+    public function actionProfile()
+    {
+        if(! Auth::check()){
+           return response()->json(['error' => 4032],403);
+        }
+        return [
+            'error' => 0,
+            'data' => Auth::user()
         ];
     }
 

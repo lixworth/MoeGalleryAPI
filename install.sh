@@ -4,5 +4,5 @@ chmod -R 777 storage
 # edit .env
 # php artisan migrate
 composer update
-composer dump-autoload --optimize
+composer dump-autoloa:d --optimize
 

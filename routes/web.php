@@ -13,16 +13,12 @@
 
 /** @var null $router */
 
-$router->get('/login', 'AuthController@actionLogin');
+$router->get('/profile', 'AuthController@actionProfile');
 $router->post('/login', 'AuthController@actionLogin');
-
-$router->get('/register', 'AuthController@actionRegister');
-$router->post('/register', 'AuthController@actionRegister');
-
-
-$router->get('/logout', 'AuthController@actionLogout');
 $router->post('/logout', 'AuthController@actionLogout');
 
 
-$router->get('/upload', 'FileController@actionUpload');
 $router->post('/upload', 'FileController@actionUpload');
+
+$router->get('/siteinfo', 'SiteController@info');
+
