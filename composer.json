@@ -6,9 +6,12 @@
     "type": "project",
     "require": {
         "php": ">=7.1.3",
+        "graham-campbell/flysystem": "^6.1",
         "laravel/lumen-framework": "5.8.*",
         "lcobucci/jwt": "^3.3",
-        "tymon/jwt-auth": "1.0.0-rc.4.1"
+        "league/flysystem": "^1.0",
+        "tymon/jwt-auth": "1.0.0-rc.4.1",
+        "ext-json": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.4",

@@ -14,6 +14,7 @@
 /** @var null $router */
 
 $router->get('/profile', 'AuthController@actionProfile');
+$router->get('/install', 'Install@actionInstall');
 $router->post('/login', 'AuthController@actionLogin');
 $router->post('/logout', 'AuthController@actionLogout');
 
@@ -22,3 +23,7 @@ $router->post('/logout', 'AuthController@actionLogout');
 
 $router->get('/siteinfo', 'SiteController@info');
 
+$router->get('/test', 'FileController@actionTest');
+
+$router->get('/getGalleries','GalleryController@actionGetGalleries');
+$router->get('/image/{file_id}/{md5}','FileController@actionShowImage');

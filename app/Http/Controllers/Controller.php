@@ -8,5 +8,6 @@ class Controller extends BaseController
 {
     public function __construct()
     {
+        Install::install(); //install模拟数据
     }
 }

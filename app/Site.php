@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
+
 /**
  * Site.php
  *
@@ -11,7 +13,7 @@ namespace App;
  * @date 2019/8/31 18:27
  * @author lixworth
  */
-class Site extends \Illuminate\Database\Eloquent\Model
+class Site extends Model
 {
     public $table = 'site';
 }
